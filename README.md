@@ -1,1 +1,1 @@
-# WebApplication1
+# Приклад на CSRF вразливість
